@@ -1,0 +1,18 @@
+<!--pages/salesman_proj/salesman_proj.wxml-->
+<view class="container">
+  <view class='create'>
+    <view wx:for="{{act_msg}}" wx:key="*this">
+
+      <view class="proj-card">
+        <view class="title">{{item.project_name}}</view>
+        <view class="timu">负责人：{{item.peoples}}</view>
+        <view class="bottom">
+          <view class="leader">{{item.time}}</view>
+          <view class="msg" bindtap='salesman_proj_detail' data-id="{{item.project_id}}">项目详情</view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>

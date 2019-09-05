@@ -1,0 +1,28 @@
+<!--pages/boss_index/boss_index.wxml--> 
+<view class="container">
+<swiper style="border-radius: 15rpx;" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 查看所有项目 查看业务员 -->
+<view class="top-card">
+  <view class="card-style" bindtap='salesman_proj'>我的项目</view>
+  <view class="divLine"></view>
+  <view class="card-style" bindtap='salesman_voicemail'>留言信息</view>
+  <view class="divLine"></view>
+  <view class='card-style' bindtap='create_proj'>创建项目</view>
+ 
+</view>
+
+<view class="top-card2">
+<view class="card-style">使用帮助</view>
+<view class="divLine"></view>
+<view class="card-style">意见反馈</view>
+</view>
+</view>
+
+

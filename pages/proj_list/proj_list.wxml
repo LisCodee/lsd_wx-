@@ -1,0 +1,35 @@
+<!--pages/proj_list/proj_list.wxml-->
+
+<view class='search'>
+<image src='../../picture/search.png' class='search_img'></image>
+<input class='search_input' placeholder='请输入搜索内容'></input>
+</view>
+
+
+<view class="container">
+  <view class='create'>
+    <view wx:for="{{act_msg}}" wx:key="*this" style='width:100%;'>
+    
+      <view class="proj-card">
+        <view class="top">
+          <view class="title">{{item.proj_name}}</view>
+        </view>
+        <view class="mid">
+          <view class="time">{{item.proj_time}}</view>
+        </view>
+        <view class="bottom">
+          <view class="leader">{{item.proj_leader}}</view>
+          <view class="msg" bindtap='del'>删除</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+</view>
+
+
+<view class="create-proj">
+  <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="send">创建项目</button>
+</view>

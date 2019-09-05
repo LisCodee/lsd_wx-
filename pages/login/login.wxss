@@ -1,0 +1,61 @@
+/* pages/login/login.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+
+}
+
+.container image{
+  height: 120rpx;
+  width: 120rpx;
+  margin-bottom: 16rpx;
+}
+
+.log-msg{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-text{
+  font-size: 35rpx;
+  color: #555555;
+  margin-bottom: 96rpx;
+}
+
+.mid-text{
+  color: #555555;
+  margin-bottom: 64rpx;
+  font-size: 30rpx;
+}
+
+.input-msg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn_in{
+height: 60rpx;
+width: 500rpx;
+background-color: #f0f0f0;
+margin-bottom: 40rpx;
+padding: 15rpx;
+padding-left: 20rpx;
+border-radius: 10rpx;
+}
+.center{
+  font-size: 30rpx;
+}
+
+button{
+  margin-top: 96rpx;
+  width: 540rpx;
+  color: #fff;
+  height: 80rpx;
+  font-size: 30rpx;
+  font-family: "微软雅黑", "黑体";
+  background: #4481dd;
+}

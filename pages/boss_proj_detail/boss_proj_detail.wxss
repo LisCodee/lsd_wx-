@@ -1,0 +1,119 @@
+/* pages/boss_proj_detail/boss_proj_detail.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+
+}
+page {
+  background-color: #f7f5f7;
+  font-size: 28rpx;
+  font-family: '微软雅黑';
+}
+
+.create {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* align-items: center; */
+}
+
+.proj_card {
+  width: 84%;
+  height: 300rpx;
+  background-color: white;
+  border: 1rpx solid #eee;
+  border-radius: 4%;
+  margin-left: 8%;
+  margin-bottom: 40rpx;
+  box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
+}
+.basic_information{
+  text-align: center;
+  margin:10rpx 0 20rpx 0;
+  font-size: 30rpx;
+  /* border-bottom: 2rpx solid black; */
+}
+.basic_format{
+  padding: 0 0 0 20rpx;
+  line-height: 42rpx;
+}
+.report_card{
+  width: 60%;
+  height: 240rpx;
+  margin-left: 8%;
+  margin-bottom: 20rpx;
+  background-color: white;
+  border: 1rpx solid #eee;
+  border-radius: 4%;
+  box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
+}
+.report_basic_format{
+  padding-left: 20rpx;
+  margin:10rpx 0 20rpx 0;
+  font-size: 28rpx;
+  line-height: 42rpx;
+}
+.btn{
+  width: 160rpx;
+  height: 52rpx;
+  font-size: 22rpx;
+  font-family: "微软雅黑", "黑体";
+  color: white;
+  background-color: #4481dd;
+  float: right;
+  margin-right: 20rpx;
+}
+.boss_reply{
+  width: 60%;
+  height: 160rpx;
+  background-color: white;
+  border: 1rpx solid #eee;
+  border-radius: 4%;
+  margin-left: 32%;
+  margin-bottom: 40rpx;
+  box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
+}
+.reply_format{
+  font-size: 28rpx;
+  padding: 10rpx 0 10rpx 20rpx;
+  font-family: "微软雅黑", "黑体";
+}
+.LM {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+}
+.placeholder {
+  color: #ccc;
+  font-size: 26rpx;
+  background-color: white;
+  text-indent: 20rpx;
+  /* border: 1px solid black; */
+}
+.input_reply{
+  width: 80%;
+  height: 80rpx;
+}
+.btn_in {
+  height: 100%;
+  /* float: right; */
+  width: 100%;
+  padding-top: 0rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+.button1 {
+  
+  width: 20%;
+  color: #fff;
+  height: 100%;
+  font-size: 30rpx;
+  font-family: "微软雅黑", "黑体";
+  background: #4481dd;
+}

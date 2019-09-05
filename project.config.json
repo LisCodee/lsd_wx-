@@ -1,0 +1,167 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"coverView": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.1",
+	"appid": "wx088be5fe19d1b0d9",
+	"projectname": "%E9%9B%B7%E5%A3%AB%E8%BE%BE%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 16,
+			"list": [
+				{
+					"id": -1,
+					"name": "salesman_index",
+					"pathName": "pages/salesman_index/salesman_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "logs",
+					"pathName": "pages/logs/logs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "view_salesman",
+					"pathName": "pages/view_salesman/view_salesman",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "view_salesman",
+					"pathName": "pages/view_salesman/view_salesman",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "add_salesman",
+					"pathName": "pages/add_salesman/add_salesman",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "salesman_index",
+					"pathName": "pages/salesman_index/salesman_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "salesman_proj",
+					"pathName": "pages/salesman_proj/salesman_proj",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "proj_list",
+					"pathName": "pages/proj_list/proj_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "boss_index",
+					"pathName": "pages/boss_index/boss_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "proj_report",
+					"pathName": "pages/proj_report/proj_report",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "create_proj",
+					"pathName": "pages/create_proj/create_proj",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "see_more",
+					"pathName": "pages/see_more/see_more",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "boss_see_more",
+					"pathName": "pages/boss_see_more/boss_see_more",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "boss_see_more",
+					"pathName": "pages/boss_see_more/boss_see_more",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "salesman_proj_detail",
+					"pathName": "pages/salesman_proj_detail/salesman_proj_detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "boss_proj_detail",
+					"pathName": "pages/boss_proj_detail/boss_proj_detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "salesman_voicemail",
+					"pathName": "pages/salesman_voicemail/salesman_voicemail",
+					"scene": null
+				}
+			]
+		}
+	}
+}

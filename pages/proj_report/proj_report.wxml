@@ -1,0 +1,54 @@
+<!--pages/proj_report/proj_report.wxml-->
+<view class="container">
+  <view class="classname">
+    <form>
+      <view style='width:90%;margin:20rpx 5% 20rpx 5%;'>
+        <view class="title">项目进展:</view>
+        <view class='detail_view'>
+          <textarea class='detail_textarea' auto-height='true' bindinput="progress_change" name='proj_progress'></textarea>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:20rpx 5% 20rpx 5%;'>
+        <view class="title">落实情况:</view>
+        <view class='detail_view'>
+          <textarea class='detail_textarea' auto-height='true' bindinput='workable_change' name='implementation_status'></textarea>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:20rpx 5% 20rpx 5%;'>
+        <view class="title">供货情况:</view>
+        <view class='detail_view'>
+          <textarea class='detail_textarea' auto-height='true' bindinput='supply_change' name='availability'></textarea>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:20rpx 5% 20rpx 5%;'>
+        <view class="title">项目资金:</view>
+        <view class='detail_view'>
+          <textarea class='detail_textarea' auto-height='true' bindinput='capital_change' name='project_funding'></textarea>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:20rpx 5% 20rpx 5%;'>
+        <view class="title">开票情况:</view>
+        <view class='detail_view'>
+          <textarea class='detail_textarea' auto-height='true' bindinput='invoice_change' name='billing_situation'></textarea>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:20rpx 5% 20rpx 5%;'>
+        <view class="title">其他:</view>
+        <view class='detail_view'>
+          <textarea class='detail_textarea' auto-height='true' bindinput='other_change' name='other'></textarea>
+        </view>
+      </view>
+
+
+
+      <view class="submit">
+        <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="send">提交</button>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="classname">
+    <form>
+      <view class="message">名称:
+        <input placeholder-class='placeholder' placeholder='请输入名称' class="btn_in" name='act_name' value="{{}}" bindinput="project_name_change" />
+      </view>
+      <view class="message">来源:
+        <input placeholder-class='placeholder' placeholder='请输入项目来源' class="btn_in" name='act_name' value="{{}}" bindinput="pro_source_change" />
+      </view>
+      <view class="message">对方姓名:
+        <input type="number" placeholder="请输入来源方姓名" placeholder-class='placeholder' class="btn_in" name='people_num' value="{{}}" bindinput="other_name_change" />
+      </view>
+      <view class="message">对方电话:
+        <input type="number" placeholder="请输入来源方电话" placeholder-class='placeholder' class="btn_in" name='people_num' value="{{}}" bindinput="other_tel_change" />
+      </view>
+      
+      <view class="introduce">
+        <view class="jianjie">简介:</view>
+        <textarea bindinput="brief_change" />
+      </view>
+
+      <view class="create-proj">
+        <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="send">提交</button>
+      </view>
+    </form>
+  </view>
+</view>

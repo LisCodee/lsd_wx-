@@ -1,0 +1,55 @@
+/* pages/boss_index/boss_index.wxss */
+page{
+  background-color:#eff2fb;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  border-radius: 15rpx;
+}
+
+.slide-image{
+  height: 100%;
+  width: 100%;
+  border-radius: 15rpx;
+}
+
+swiper{
+  margin-top: 30rpx;
+  height:360rpx;
+  width: 660rpx;
+}
+.top-card{
+  border-radius: 14rpx;
+  margin-top: 36rpx;
+  height: 202rpx;
+  background-color: white;
+  width: 660rpx;
+  border-style: solid;
+  border-color: #eeeeee;
+  border-width: 1rpx;
+  box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
+}
+
+.divLine{
+ background: #eeeeee;
+ width: 92%;
+ height: 3rpx;
+ margin-left: 28rpx;
+}
+.card-style{
+  font-size: 30rpx;
+  color: #555555;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  padding-left: 40rpx;
+}

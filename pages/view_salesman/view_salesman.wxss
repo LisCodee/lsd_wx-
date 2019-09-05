@@ -1,0 +1,86 @@
+/* pages/view_salesman/view_salesman.wxss */
+.container {
+  padding: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+page{
+  background: #f4f4f4;
+}
+
+.classname {
+  height: 100%;
+  width: 100%;
+  padding-bottom: 150rpx;
+}
+
+.message {
+  color: #333;
+  font-family: "微软雅黑", "黑体";
+  height: 90rpx;
+  width: 100%;
+  border-radius: 8rpx;
+  background: #fff;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 92rpx;
+  font-size: 30rpx;
+  margin-top: 50rpx;
+  box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
+}
+.salesman_name{
+  margin-left: 40rpx;
+}
+.line{
+  float: right;
+  margin-right: 30rpx;
+  width: 2rpx;
+  height: 100%;
+  background-color: #F6F4F4;
+}
+.delete{
+  float:right;
+  margin-right:50rpx; 
+  border-left-color: red;
+}
+
+.placeholder {
+  color: #ccc;
+  font-size: 26rpx;
+}
+
+.btn_in {
+  height: 100%;
+  float: right;
+  width: 76%;
+  padding-top: 0rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+
+
+.del {
+  float: right;
+  margin-bottom: 20rpx;
+  display: inline-block;
+  height: 20rpx;
+}
+.create-proj {
+  position: fixed;
+  bottom: 50rpx;
+  left: 0;
+  right: 0;
+}
+button {
+  margin-top: 96rpx;
+  width: 690rpx;
+  color: #fff;
+  height: 80rpx;
+  font-size: 30rpx;
+  font-family: "微软雅黑", "黑体";
+  background: #4481dd;
+}

@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="log-msg">
+    <image class="log-img" src='../../picture/log.png'></image>
+    <view class="top-text">雷思达</view>
+    <view class="mid-text">欢迎登陆雷斯达管理系统</view>
+  </view>
+  <form>
+    <view class="input-msg">
+      <input  placeholder-class='placeholder center' placeholder='请输入用户名' class="btn_in" name='act_name' value="{{}}" bindinput="event_name_change" />
+      <input placeholder-class='placeholder center' placeholder='请输入密码' class="btn_in" name='act_name' value="{{}}" bindinput="event_password_change" />
+    </view>
+    <view class="login-btn">
+      <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="login">登陆</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/salesman_proj_detail/salesman_proj_detail.wxml-->
+<view class="container">
+  <view class='create'>
+
+    <view class='proj_card'>
+      <view class='basic_information'>基本信息</view>
+      <view class='basic_format'>
+        <view class="proj_title">项目题目：{{project_name}}</view>
+        <view class="principal">来源：{{source}}</view>
+        <view class="contact_person">对方联系人：{{contacts}}</view>
+        <view class="contact_method">对方联系人方式：{{telephone}}</view>
+        <view class="creation_time">创建时间：{{creation_time}}</view>
+      </view>
+    </view>
+
+    <view class='report_card'>
+      <view class='report_basic_format'>
+        <view>汇报题目：{{report_topic}}</view>
+        <view>汇报人：{{report_man}}</view>
+        <view>汇报时间：{{report_time}}</view>
+      </view>
+      <button class='btn' bindtap='see_more'>查看更多</button>
+    </view>
+
+    <view class='boss_reply'>
+      <view class='reply_format'>{{boss_reply}}</view>
+    </view>
+
+    <view class="create-proj">
+      <button type="" form-type="submit" hover-class='button-hover' class='btn_style,button1' bindtap="proj_report">新建汇报</button>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,66 @@
+/* pages/salesman_voicemail/salesman_voicemail.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+page {
+  background-color: #f7f5f7;
+}
+
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message_card {
+  border-radius: 10rpx;
+  width: 620rpx;
+  height: 180rpx;
+  background-color: white;
+  border-color: #eeeeee;
+  border-width: 1rpx;
+  border-style: solid;
+  padding: 22rpx 25rpx 0 30rpx;
+  margin-bottom: 32rpx;
+  box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
+  
+}
+
+.title {
+  font-weight: 370;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 36rpx;
+  color: #555555;
+  margin-bottom: 12rpx;
+}
+
+.message_body {
+  font-size: 32rpx;
+  color: #97989b;
+  margin-bottom: 12rpx;
+  height: 120rpx;
+  overflow: hidden;
+}
+
+.bottom {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.time {
+  font-size: 30rpx;
+  color: #a3a4a6;
+}
+
+.msg {
+  font-size: 30rpx;
+  color: #a3a4a6;
+}

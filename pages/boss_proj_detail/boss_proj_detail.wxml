@@ -1,0 +1,37 @@
+<!--pages/boss_proj_detail/boss_proj_detail.wxml-->
+<view class="container">
+  <view class='create'>
+
+    <view class='proj_card'>
+      <view class='basic_information'>基本信息</view>
+      <view class='basic_format'>
+        <view class="proj_title">项目题目：{{proj_title}}</view>
+        <view class="principal">负责人：{{principal}}</view>
+        <view class="contact_person">对方联系人：{{contact_person}}</view>
+        <view class="contact_method">对方联系人方式：{{contact_method}}</view>
+        <view class="creation_time">创建时间：{{creation_time}}</view>
+      </view>
+    </view>
+
+    <view class='report_card'>
+      <view class='report_basic_format'>
+        <view>汇报题目：{{report_topic}}</view>
+        <view>汇报人：{{report_man}}</view>
+        <view>汇报时间：{{report_time}}</view>
+      </view>
+      <button class='btn' bindtap='see_more'>查看更多</button>
+    </view>
+
+    <view class='boss_reply'>
+      <view class='reply_format'>{{boss_reply}}</view>
+    </view>
+
+    <view class="LM">
+      <view class='input_reply'>
+        <input type="number" placeholder="请输入留言" placeholder-class='placeholder' class="btn_in" name='leave_message' value="{{}}" bindinput="leave_message" />
+      </view>
+      <button type="" form-type="submit" hover-class='button-hover' class='button1'>留言</button>
+    </view>
+
+  </view>
+</view>

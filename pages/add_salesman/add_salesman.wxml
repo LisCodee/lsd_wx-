@@ -1,0 +1,20 @@
+<!--pages/add_salesman/add_salesman.wxml-->
+<view class="container">
+  <view class="classname">
+    <form>
+      <view class="message">
+        <text class='name'>名称 :</text>
+
+        <input placeholder-class='placeholder' placeholder='请输入姓名' class="btn_in" name='username' value="{{}}" bindinput="name_change" />
+      </view>
+      <view class="message2">
+        <text class='name'>密码 :</text>
+        <input placeholder-class='placeholder' placeholder='请输入密码' class="btn_in" name='password' value="{{}}" bindinput="password_change" />
+      </view>
+
+      <view class="create-proj">
+        <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="send">确定</button>
+      </view>
+    </form>
+  </view>
+</view>

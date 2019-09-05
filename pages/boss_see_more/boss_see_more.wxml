@@ -1,0 +1,54 @@
+<!--pages/boss_see_more/boss_see_more.wxml-->
+<view class="container">
+  <view class="classname">
+    <form>
+      <view style='width:90%;margin:0 5% 20rpx 5%;'>
+        <view class="title">项目进展:</view>
+        <view class='detail_view'>
+          <text class='detail_textarea' auto-height='true' name='proj_progress'>{{progress}}              </text>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:0 5% 20rpx 5%;'>
+        <view class="title">落实情况:</view>
+        <view class='detail_view'>
+          <text class='detail_textarea' auto-height='true' name='implementation_status'>{{workable}}</text>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:0 5% 20rpx 5%;'>
+        <view class="title">供货情况:</view>
+        <view class='detail_view'>
+          <text class='detail_textarea' auto-height='true' name='availability'>{{supply}}</text>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:0 5% 20rpx 5%;'>
+        <view class="title">项目资金:</view>
+        <view class='detail_view'>
+          <text class='detail_textarea' auto-height='true' name='project_funding'>{{capital}}</text>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:0 5% 20rpx 5%;'>
+        <view class="title">开票情况:</view>
+        <view class='detail_view'>
+          <text class='detail_textarea' auto-height='true' name='billing_situation'>{{invoice}}</text>
+        </view>
+      </view>
+
+      <view style='width:90%;margin:0 5% 20rpx 5%;'>
+        <view class="title">其他:</view>
+        <view class='detail_view'>
+          <text class='detail_textarea' auto-height='true' name='other'>{{other}}</text>
+        </view>
+      </view>
+
+
+
+      <view class="submit">
+        <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="send">留言</button>
+      </view>
+    </form>
+  </view>
+</view>

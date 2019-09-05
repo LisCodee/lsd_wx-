@@ -1,0 +1,18 @@
+<!--pages/salesman_voicemail/salesman_voicemail.wxml-->
+<view class="container">
+  <view class='create'>
+    <view wx:for="{{voicemail}}" wx:key="*this">
+
+      <view class="message_card">
+        
+        <view class="message_body">{{item.message}}</view>
+        <view class="bottom">
+          <view class="time">{{item.message_time}}</view>
+          <view class="msg" bindtap='salesman_proj_detail' data-message_id="{{item.message_id}}">项目详情</view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>

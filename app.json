@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/add_salesman/add_salesman",
+    "pages/view_salesman/view_salesman",
+    "pages/boss_see_more/boss_see_more",
+    "pages/boss_proj_detail/boss_proj_detail",
+    "pages/see_more/see_more",
+    "pages/salesman_proj_detail/salesman_proj_detail",
+    "pages/proj_report/proj_report",
+    "pages/create_proj/create_proj",
+    "pages/salesman_proj/salesman_proj",
+    "pages/salesman_voicemail/salesman_voicemail",
+    "pages/salesman_index/salesman_index",
+    "pages/proj_list/proj_list",
+    "pages/boss_index/boss_index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#eff2fb",
+    "navigationBarTitleText": "雷斯达管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

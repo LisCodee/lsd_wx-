@@ -1,0 +1,21 @@
+<!--pages/view_salesman/view_salesman.wxml-->
+<view class="container">
+  <view class="classname">
+    <form>
+
+
+      <view wx:for="{{salesman}}" wx:key="*this">
+        <view class="message">
+          <text class='salesman_name'>{{item.user_name}}电话：{{item.telephone}}</text>
+          <text class='delete' bindtap='delete_salesman' data-user_name="{{item.user_name}}">删除</text>
+          <view class='line'></view>
+        </view>
+      </view>
+
+
+      <view class="create-proj">
+        <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="add_salesman">添加业务员</button>
+      </view>
+    </form>
+  </view>
+</view>

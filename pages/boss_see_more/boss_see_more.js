@@ -12,6 +12,7 @@ Page({
     capital: '王市长那边需要1000万打点',
     invoice: '无',
     other: '没有其他的了',
+    voicemail:''
   },
   onLoad: function () {
     var that = this
@@ -43,5 +44,50 @@ Page({
         })
       }
     })
+  },
+  leave_message:function(e){
+    this.setData({
+      voicemail:e.detail.value
+    })
+    console.log(this.data.voicemail)
+  },
+  send:function(e){
+    var that = this
+    if (this.data.voicemail == '') {
+      wx.showToast({
+        title: '请输入留言内容',
+        icon: 'none'
+      })
+    } else {
+      wx.request({
+        url: 'https://www.leishida.cn/record',
+        data: {
+          project_id: app.globalData.project_id,
+          content: that.data.voicemail
+        },
+        method: "POST",
+        success: function (res) {
+          if (res.statusCode == 200) {
+            wx.showToast({
+              title: '留言成功',
+            })
+            this.onLoad       //刷新页面
+          } else {
+            wx.showToast({
+              title: '请重试',
+              icon: 'none'
+            })
+            console.log(res.statusCode)
+          }
+        },
+        fail: function (e) {
+          console.log(e)
+          wx.showToast({
+            title: '网络超时',
+            icon: 'none'
+          })
+        }
+      })
+    }
   }
 })

@@ -59,7 +59,7 @@ Page({
       method:'POST',
       success:function(res){
         if(res.statusCode == 200){
-          if(res.status == true){
+          if(res.data.status == true){
             wx.showToast({
               title: '创建成功',
             })
@@ -79,6 +79,7 @@ Page({
       fail:function(e){
         wx.showToast({
           title: '网络连接超时',
+          icon:'none'
         })
         console.log(e.detail.value)
       }

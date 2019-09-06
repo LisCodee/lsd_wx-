@@ -50,6 +50,7 @@ Page({
     console.log("other:" + this.data.other)
   },
   send:function(e){
+    console.log("用户点击提交")
     var that = this
     wx.request({
       url: 'https://www.leishida.cn/add-report',
@@ -66,7 +67,7 @@ Page({
       method:"POST",
       success:function(res){        //成功回调函数
         if(res.statusCode == 200){
-          if(res.status == true){
+          if(res.data.status == true){
             wx.showToast({
               title: '汇报成功',
             })
@@ -75,7 +76,7 @@ Page({
             })
           }
           else{
-            console.log(res.status)
+            console.log(res.data.status)
           }
         }
         else{
@@ -83,6 +84,10 @@ Page({
         }
       },
       fail:function(e){
+        wx.showToast({
+          title: '网络超时，请重试',
+          icon:'none'
+        })
         console.log(e)
       }
     })

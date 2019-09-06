@@ -46,9 +46,13 @@
 
 
 
-      <view class="submit">
-        <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="send">留言</button>
+    <view class="LM">
+      <view class='input_reply'>
+        <input type="number" placeholder="请输入留言" placeholder-class='placeholder' class="btn_in" name='leave_message' value="{{}}" bindinput="leave_message" />
       </view>
+      <button type="" form-type="submit" hover-class='button-hover' class='button1' bindtap="send">留言</button>
+    </view>
+    
     </form>
   </view>
 </view>

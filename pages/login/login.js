@@ -14,9 +14,9 @@ Page({
   login: function(e) {
     var that = this;
     wx.request({ //向后台发送登录请求
-      url: 'https://www.leishida.cn/login',
+      url: 'http://127.0.0.1:8000/LSD/login/',  //https://www.leishida.cn/login
       data: {
-        name: that.data.name,
+        user_name: that.data.name,
         password: that.data.password
       },
       header: {

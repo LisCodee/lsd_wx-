@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/logs/logs",
-    "pages/boss_proj_detail/boss_proj_detail",
+    "pages/add_salesman/add_salesman",
     "pages/login/login",
     "pages/salesman_proj_detail/salesman_proj_detail",
-    "pages/add_salesman/add_salesman",
+    "pages/boss_proj_detail/boss_proj_detail",
+    "pages/logs/logs",
     "pages/view_salesman/view_salesman",
     "pages/boss_see_more/boss_see_more",
     "pages/proj_list/proj_list",

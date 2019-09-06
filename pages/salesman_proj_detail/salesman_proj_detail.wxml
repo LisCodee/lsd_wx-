@@ -13,18 +13,18 @@
       </view>
     </view>
 
-     <view wx:for='{{message}}' wx:key='*this'> 
-    <view class='report_card'>
+     <view wx:for='{{message}}' wx:key='*this' wx:for-item="item"> 
+    <view class='report_card' wx:if="{{item.status == 0}}">
       <view  class='report_basic_format' >
         <view>汇报题目：{{item.report_name}}</view>
         <view>汇报人：{{item.reporter}}</view>
         <view>汇报时间：{{item.time}}</view>
       </view>
-      <button class='btn' bindtap='boss_see_more'>查看更多</button>
+      <button class='btn' bindtap='see_more' data-report_id="{{item.report_id}}">查看更多</button>
     </view>
 
-    <view class='boss_reply'>
-      <view class='reply_format'>{{item.voicemail}}</view>
+    <view class='boss_reply' wx:if="{{item.status == 1}}">
+      <view class='reply_format'>{{item.content}}</view>
     </view>
     </view>
 

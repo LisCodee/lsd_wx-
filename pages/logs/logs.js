@@ -12,7 +12,7 @@ Page({
       })
     })
   },
-  combineArray:function(){
+  combineArray:function(a,b){
     var a = [{ status: 0, report_id: '1', report_name: '雷士达项目管理系统', reporter: '王亚莉', time: '2019/08/30' }, { status: 0,         report_id: '1', report_name: '雷士达项目管理系统', reporter: '王亚莉', time: '2019/09/30' }]
     var b = [{ status: 1, content: '留言信息', time: '2019/08/31' }, { status: 1, content: '留言信息', time: '2019/10/20' }]
     var result = []
@@ -39,5 +39,6 @@ Page({
       }
     }
     console.log(result)
+    return result
   }
 })

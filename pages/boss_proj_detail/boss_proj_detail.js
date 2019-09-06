@@ -1,5 +1,5 @@
 // pages/boss_proj_detail/boss_proj_detail.js
-var app = getApp()
+const app = getApp()
 Page({
 
   /**
@@ -11,15 +11,10 @@ Page({
     contacts: '李景新',
     telephone: '110',
     introduction: '2019/08/30',
-
-    message: [{status:0, report_id: '1', report_name: '雷士达项目管理系统', reporter:'王亚莉',time:'2019/08/30',voicemail:[]},
-    {status:1,content:'留言信息',time:'留言时间'}],
+    report_record: [{ status: 0, report_id: '1', report_name: '雷士达项目管理系统', reporter: '王亚莉', time: '2019/08/30' }, { status: 0, report_id: '1', report_name: '雷士达项目管理系统', reporter: '王亚莉', time: '2019/09/30' }],
+    voicemail_record: [{ status: 1, content: '留言信息', time: '2019/08/31' }, { status: 1, content: '留言信息', time: '2019/10/20' }],
+    message: [],
     voicemail:''
-    // report_topic: '雷士达项目管理系统',
-    // report_man: '王亚莉',
-    // report_time: '2019/08/30',
-
-    // boss_reply: '做的不错',
   },
   onLoad:function(){
     var that = this
@@ -55,13 +50,13 @@ Page({
       }
     })
     wx.request({
-      url: 'https://www.leishida.cn/project-report--record',
-      data:{},
+      url: 'https://www.leishida.cn/single-project-report',
+      data:{project_id:app.globalData.project_id},
       method:"GET",
       success:function(res){
         if(res.statusCode == 200){
           that.setData({
-            message: res.data
+            report_record: res.data
           })
         }else{
           console.log(res.statusCode)
@@ -77,7 +72,36 @@ Page({
           title: '网络超时，请重试',
           icon:'none'
         })
-      }
+      },
+    })
+    wx.request({
+      url: 'https://www.leishida.cn/single-project-record',
+      data: { project_id: app.globalData.project_id},
+      method: "GET",
+      success: function (res) {
+        if (res.statusCode == 200) {
+          that.setData({
+            voicemail_record: res.data
+          })
+        } else {
+          console.log(res.statusCode)
+          wx.showToast({
+            title: '请刷新',
+            icon: 'none'
+          })
+        }
+      },
+      fail: function (e) {
+        console.log(e)
+        wx.showToast({
+          title: '网络超时，请重试',
+          icon: 'none'
+        })
+      },
+    })
+    var result = app.combineArray(this.data.report_record,this.data.voicemail_record)
+    this.setData({
+      message:result
     })
   },
   boss_see_more: function (e) {

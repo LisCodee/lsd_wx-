@@ -23,15 +23,15 @@ Page({
   send:function(){
     var that = this
     wx.request({
-      url: 'https://www.leishida.cn/add-salesman',
+      url: 'http://127.0.0.1:8000/LSD/add_salesman/',      //https://www.leishida.cn/LSD/add-salesman
       data:{
-        name:that.data.name,
+        user_name:that.data.name,
         password:that.data.password
       },
       method:"POST",
       success:function(res){
         if(res.statusCode == 200){
-          if(res.status == true){
+          if(res.data.status == true){
             wx.showToast({
               title: '添加成功',
             })
@@ -47,7 +47,7 @@ Page({
           }
         }
         else{
-          console.log(res.status)
+          console.log(res.statusCode)
         }
       },
       fail:function(e){

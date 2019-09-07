@@ -11,77 +11,52 @@ Page({
     contacts: '李景新',
     telephone: '110',
     introduction: '2019/08/30',
-    report_record: [{ status: 0, report_id: '1', report_name: '雷士达项目管理系统', reporter: '王亚莉', time: '2019/08/30' }, { status: 0, report_id: '1', report_name: '雷士达项目管理系统', reporter: '王亚莉', time: '2019/09/30' }],
-    voicemail_record: [{ status: 1, content: '留言信息', time: '2019/08/31' }, { status: 1, content: '留言信息', time: '2019/10/20' }],
+    report_record: [/*{ status: 0, report_id: '1', report_name: '雷士达项目管理系统', reporter: '王亚莉', time: '2019/08/30' }, { status: 0, report_id: '1', report_name: '雷士达项目管理系统', reporter: '王亚莉', time: '2019/09/30' }*/],
+    voicemail_record: [/*{ status: 1, content: '留言信息', time: '2019/08/31' }, { status: 1, content: '留言信息', time: '2019/10/20' }*/],
     message: [],
     voicemail:''
   },
-  onLoad:function(){
-    var that = this
+  load:function(){
+    var that = this;
     wx.request({
-      url: 'https://www.leishida.cn/single-project-detail',
-      data:{
-        project_id:app.globalData.project_id
+      url: 'http://127.0.0.1:8000/LSD/single_project_detail',    //https://www.leishida.cn/LSD/single-project-detail
+      data: {
+        project_id: app.globalData.project_id
       },
-      method:"GET",
-      success:function(res){
-        if(res.statusCode == 200){
-          that.setData({
-            project_name:res.data.project_name,
-            source:res.data.source,
-            contacts:res.data.contacts,
-            telephone:res.data.telephone,
-            introduction:res.data.introduction
-          })
-        }else{
-          console.log(res.statusCode)
-          wx.showToast({
-            title: '请退出重试',
-            icon:'none'
-          })
-        }
-      },
-      fail:function(e){
-        console.log(e)
-        wx.showToast({
-          title: '网络超时',
-          icon:'none'
-        })
-      }
-    })
-    wx.request({
-      url: 'https://www.leishida.cn/single-project-report',
-      data:{project_id:app.globalData.project_id},
-      method:"GET",
-      success:function(res){
-        if(res.statusCode == 200){
-          that.setData({
-            report_record: res.data
-          })
-        }else{
-          console.log(res.statusCode)
-          wx.showToast({
-            title: '请刷新',
-            icon:'none'
-          })
-        }
-      },
-      fail:function(e){
-        console.log(e)
-        wx.showToast({
-          title: '网络超时，请重试',
-          icon:'none'
-        })
-      },
-    })
-    wx.request({
-      url: 'https://www.leishida.cn/single-project-record',
-      data: { project_id: app.globalData.project_id},
       method: "GET",
       success: function (res) {
         if (res.statusCode == 200) {
           that.setData({
-            voicemail_record: res.data
+            project_name: res.data.project_name,
+            source: res.data.source,
+            contacts: res.data.contacts,
+            telephone: res.data.telephone,
+            introduction: res.data.introduction
+          })
+        } else {
+          console.log(res.statusCode)
+          wx.showToast({
+            title: '请退出重试',
+            icon: 'none'
+          })
+        }
+      },
+      fail: function (e) {
+        console.log(e)
+        wx.showToast({
+          title: '网络超时',
+          icon: 'none'
+        })
+      }
+    })
+    wx.request({
+      url: 'http://127.0.0.1:8000/LSD/single_project_report',      //https://www.leishida.cn/single_project_report
+      data: { project_id: app.globalData.project_id },
+      method: "GET",
+      success: function (res) {
+        if (res.statusCode == 200) {
+          that.setData({
+            report_record: res.data
           })
         } else {
           console.log(res.statusCode)
@@ -90,6 +65,36 @@ Page({
             icon: 'none'
           })
         }
+        wx.request({
+          url: 'http://127.0.0.1:8000/LSD/single_project_record',      //https://www.leishida.cn/single_project_record
+          data: { project_id: app.globalData.project_id },
+          method: "GET",
+          success: function (mes) {
+            if (mes.statusCode == 200) {
+              that.setData({
+                voicemail_record: mes.data
+              })
+            } else {
+              console.log(mes.statusCode)
+              wx.showToast({
+                title: '请刷新',
+                icon: 'none'
+              })
+            }
+            var result = app.combineArray(that.data.report_record, that.data.voicemail_record)
+            console.log("result:" + result)
+            that.setData({
+              message: result
+            })
+          },
+          fail: function (e) {
+            console.log(e)
+            wx.showToast({
+              title: '网络超时，请重试',
+              icon: 'none'
+            })
+          },
+        })
       },
       fail: function (e) {
         console.log(e)
@@ -99,9 +104,12 @@ Page({
         })
       },
     })
-    var result = app.combineArray(this.data.report_record,this.data.voicemail_record)
+
+  },
+  onLoad:function(){
+    this.load()
     this.setData({
-      message:result
+      voicemail: ''
     })
   },
   boss_see_more: function (e) {
@@ -124,7 +132,7 @@ Page({
       })
     }else{
       wx.request({
-        url: 'https://www.leishida.cn/record',
+        url: 'http://127.0.0.1:8000/LSD/record/',    //https://www.leishida.cn/LSD/record
         data:{
           project_id:app.globalData.project_id,
           content:that.data.voicemail
@@ -135,7 +143,7 @@ Page({
             wx.showToast({
               title: '留言成功',
             })
-            this.onLoad       //刷新页面
+            that.onLoad()       //刷新页面
           }else{
             wx.showToast({
               title: '请重试',

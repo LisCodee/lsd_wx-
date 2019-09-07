@@ -1,7 +1,7 @@
-<!--pages/salesman_proj/salesman_proj.wxml-->
 <view class="container">
   <view class='create'>
     <view wx:for="{{act_msg}}" wx:key="*this">
+<!--pages/salesman_proj/salesman_proj.wxml-->
 
       <view class="proj-card">
         <view class="title">{{item.project_name}}</view>

@@ -51,7 +51,8 @@ Page({
         source:that.data.source,
         introduction:that.data.introduction,
         contacts:that.data.contacts,
-        telephone:that.data.telephone
+        telephone:that.data.telephone,
+        user_name:wx.getStorageSync('name')
       },
       header:{
         'content-type':'application/json'
@@ -70,7 +71,7 @@ Page({
             }
             else{
               wx.redirectTo({
-                url: '../salesman_index/salesman',
+                url: '../salesman_index/salesman_index',
               })
             }
           }

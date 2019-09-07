@@ -51,9 +51,10 @@ Page({
   },
   send:function(e){
     console.log("用户点击提交")
+    console.log(app.globalData.project_id)
     var that = this
     wx.request({
-      url: 'https://www.leishida.cn/add-report',
+      url: 'http://127.0.0.1:8000/LSD/add_report/',      //https://www.leishida.cn/add-report
       data:{
         project_id:app.globalData.project_id,
         report_id:app.globalData.report_id,

@@ -10,31 +10,34 @@ Page({
     act_msg: [],
     search_content:''
   }, 
-  onLoad:function(){
+  load:function(){
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8000/LSD/all_project',      //https://www.leishida.cn/LSD/all_project
-      data:{},
-      method:"GET",
-      success:function(res){
-        if(res.statusCode == 200){
+      url: 'http://127.0.0.1:8000/LSD/all_project/',      //https://www.leishida.cn/LSD/all_project
+      data: {},
+      method: "GET",
+      success: function (res) {
+        if (res.statusCode == 200) {
           that.setData({
             act_msg: res.data
           })
           console.log(res.data)
           console.log(that.data.act_msg.length)
-        }else{
+        } else {
           console.log(res.statusCode)
         }
       },
-      fail:function(e){
+      fail: function (e) {
         console.log(e)
         wx.showToast({
           title: '网络超时，请重试',
-          icon:"none"
+          icon: "none"
         })
       }
     })
+  },
+  onLoad:function(){
+    this.load()
   },
   boss_proj_detail:function(e){
     wx.navigateTo({
@@ -51,7 +54,7 @@ Page({
       success(res) {
         if (res.confirm) {    //确定后向后台发送消息
           wx.request({
-            url: 'https://www.leishida.cn/del-project',
+            url: 'http://127.0.0.1:8000/LSD/del_project/',    //https://www.leishida.cn/LSD/del_project/
             data:{project_id:proj_id},
             method:"POST",
             success:function(res){
@@ -60,6 +63,7 @@ Page({
                   wx.showToast({
                     title: '删除成功',
                   })
+                  that.onLoad()
                 }else{
                   wx.showToast({
                     title: '删除失败，请重试',
@@ -128,7 +132,7 @@ Page({
           if(res.statusCode == 200){
             wx.hideLoading()
             that.setData({
-              act_msg:res.data
+              act_msg:res.data,
             })
             if(res.data.length == 0){
               wx.showToast({
@@ -150,6 +154,11 @@ Page({
           wx.showToast({
             title: '网络超时，请重试',
             icon:'none'
+          })
+        },
+        complete:function(res){
+          that.setData({
+            search_content: ''
           })
         }
       })

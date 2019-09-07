@@ -12,23 +12,27 @@
         <view class="creation_time">简介{{introduction}}</view>
       </view>
     </view>
-    <view wx:for='{{message}}' wx:key='*this' wx:for-item="item"> 
-    <view class='report_card' wx:if="{{item.status == 0}}">
-      <view  class='report_basic_format' >
-        <view>汇报题目：{{item.report_name}}</view>
-        <view>汇报人：{{item.reporter}}</view>
-        <view>汇报时间：{{item.time}}</view>
+    <view wx:for='{{message}}' wx:key='*this' wx:for-item="item">
+      <view class='report_card' wx:if="{{item.status == 0}}">
+        <view class='report_basic_format'>
+          <view>汇报题目：{{item.report_name}}</view>
+          <view>汇报人：{{item.reporter}}</view>
+          <view>汇报时间：{{item.time}}</view>
+        </view>
+        <button class='btn' bindtap='boss_see_more'>查看更多</button>
       </view>
-      <button class='btn' bindtap='boss_see_more'>查看更多</button>
-    </view>
 
-    <view class='boss_reply' wx:if="{{item.status == 1}}">
-      <view class='reply_format'>{{item.content}}</view>
+      <view class='boss_reply' wx:if="{{item.status == 1}}">
+        <!-- {{item.content}} --> 
+        <view class='reply_format' >{{item.content}}</view>
+      </view>
+     
     </view>
-    </view>
+    <view class="blank"></view>
+
     <view class="LM">
       <view class='input_reply'>
-        <input type="number" placeholder="请输入留言" placeholder-class='placeholder' class="btn_in" name='leave_message' value="{{}}" bindinput="leave_message" />
+        <input type="number" placeholder="请输入留言" placeholder-class='placeholder' class="btn_in" name='leave_message' value="{{voicemail}}" bindinput="leave_message" />
       </view>
       <button type="" form-type="submit" hover-class='button-hover' class='button1' bindtap="send">留言</button>
     </view>

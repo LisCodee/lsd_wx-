@@ -7,8 +7,8 @@
         
         <view class="message_body">{{item.message}}</view>
         <view class="bottom">
-          <view class="time">{{item.message_time}}</view>
-          <view class="msg" bindtap='salesman_proj_detail' data-message_id="{{item.message_id}}">项目详情</view>
+          <view class="time">{{item.time}}</view>
+          <view class="msg" bindtap='salesman_proj_detail' data-project_id="{{item.project_id}}">项目详情</view>
         </view>
       </view>
 

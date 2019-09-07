@@ -1,7 +1,7 @@
 <!--pages/proj_list/proj_list.wxml-->
 <view class='search'>
   <image src='../../picture/search.png' class='search_img'></image>
-  <input class='search_input' placeholder='请输入搜索内容' bindinput="search_change"></input>
+  <input class='search_input' placeholder='请输入搜索内容' bindinput="search_change"  value='{{search_content}}'></input>
   <button class='search_button' bindtap='search'> 搜索</button> 
 </view>
 
@@ -19,7 +19,7 @@
           <view class='see_detail' bindtap='boss_proj_detail' data-proj_id="{{item.project_id}}">查看详情</view>
         </view>
         <view class="bottom">
-          <view class="leader">负责人：{{item.people}}</view>
+          <view class="leader">负责人：{{item.peoples}}</view>
           <view class="msg" bindtap='del' data-proj_id='{{item.project_id}}'>删除</view>
         </view>
       </view>
@@ -29,7 +29,7 @@
 
 
 </view>
-
+<view class="blank"></view>
 
 <view class="create-proj">
   <button type="" form-type="submit" hover-class='button-hover' class='btn_style,button2' bindtap="send">创建项目</button>

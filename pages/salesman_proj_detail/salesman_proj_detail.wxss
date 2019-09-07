@@ -67,13 +67,14 @@ page {
 }
 .boss_reply{
   width: 60%;
-  height: 160rpx;
+  /* height: 160rpx; */
   background-color: white;
   border: 1rpx solid #eee;
   border-radius: 4%;
   margin-left: 32%;
   margin-bottom: 40rpx;
   box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
+  word-break: break-all;
 }
 .reply_format{
   font-size: 28rpx;

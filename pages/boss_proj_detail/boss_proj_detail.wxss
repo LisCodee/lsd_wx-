@@ -66,8 +66,9 @@ page {
   margin-right: 20rpx;
 }
 .boss_reply{
+  word-break: break-all;
   width: 60%;
-  height: 160rpx;
+  /* height: 160rpx; */
   background-color: white;
   border: 1rpx solid #eee;
   border-radius: 4%;
@@ -76,9 +77,15 @@ page {
   box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
 }
 .reply_format{
-  font-size: 28rpx;
-  padding: 10rpx 0 10rpx 20rpx;
+  /* display: block; */
+  /* width: 100%; */
+  /*height: 160rpx; */
+  font-size: 30rpx;
+  padding: 10rpx 0 10rpx 21rpx;
   font-family: "微软雅黑", "黑体";
+}
+.blank{
+  height: 120rpx; 
 }
 .LM {
   position: fixed;
@@ -88,6 +95,7 @@ page {
   display: flex;
   flex-direction: row;
   height: 80rpx;
+  background-color: white;
 }
 .placeholder {
   color: #ccc;

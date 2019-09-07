@@ -16,7 +16,7 @@ Page({
   onLoad:function(){
     var that = this
     wx.request({
-      url: 'https://www.leishida.cn/get-report',
+      url: 'http://127.0.0.1:8000/LSD/get_report/',    //https://www.leishida.cn/LSD/get-report/
       method:'GET',
       data:{
         report_id:app.globalData.report_id

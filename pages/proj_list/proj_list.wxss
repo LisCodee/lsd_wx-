@@ -107,7 +107,9 @@ page {
   font-size: 30rpx;
   color: #a3a4a6;
 }
-
+.blank{
+  height: 120rpx;
+}
 .create-proj {
   position: fixed;
   /* bottom: 30rpx; */
@@ -120,7 +122,7 @@ page {
 }
 
 .button2 {
-  margin-top: 96rpx;
+  /* margin-top: 96rpx; */
   width: 100%;
   color: #fff;
   height: 80rpx;

@@ -1,4 +1,5 @@
 //app.js
+const app = getApp()
 App({
   globalData: {  //全局变量
     name: '',
@@ -8,23 +9,39 @@ App({
     message_id:''
   },
   onLaunch: function () {
-    wx.getStorage({
-      key: 'name',
-      success: function(res) {
-        this.globalData.name = res.data
-        console.log(res.data)
-      },
-      key:'password',
-      success:function(res){
-        this.globalData.password = res.password
-        console.log(res.data)
-      },
-      key:'identity',
-      success:function(res){
-        this.globalData.identity = res.data
-        console.log(identity)
-      }
-    })
+    // var that = this
+    // var name1,password1,identify1;
+    // wx.getStorage({
+    //   key: 'name',
+    //   success: function(res) {
+    //     console.log('name:' + res.data)
+    //     name1 = res.data
+    //   },
+    //   fail:function(res){
+    //     console.log(res)
+    //   }
+    // })
+    // wx.getStorage({
+    //   key: 'password',
+    //   success: function (res) {
+    //     console.log('password:' + res.data)
+    //     password1 = res.data
+    //   },
+    //   fail: function (res) {
+    //     console.log(res)
+    //   }
+    // })
+    // wx.getStorage({
+    //   key: 'identity',
+    //   success: function (res) {
+    //     console.log('identity:' + res.data)
+    //     identify1 = res.data     
+    //   },
+    //   fail: function (res) {
+    //     console.log(res)
+    //   }
+    // })
+    // console.log(that.globalData.identity)
   },
   combineArray: function (a, b) {
     var result = []

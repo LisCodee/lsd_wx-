@@ -12,15 +12,15 @@
 
       <view class="proj-card">
         <view class="top">
-          <view class="title">{{item.proj_name}}</view>
+          <view class="title">{{item.project_name}}</view>
         </view>
         <view class="mid">
-          <view class="time">{{item.proj_time}}</view>
-          <view class='see_detail' bindtap='boss_proj_detail' data-proj_id="{{item.proj_id}}">查看详情</view>
+          <view class="time">{{item.time}}</view>
+          <view class='see_detail' bindtap='boss_proj_detail' data-proj_id="{{item.project_id}}">查看详情</view>
         </view>
         <view class="bottom">
-          <view class="leader">负责人：{{item.proj_leader}}</view>
-          <view class="msg" bindtap='del' data-proj_id='{{item.proj_id}}'>删除</view>
+          <view class="leader">负责人：{{item.people}}</view>
+          <view class="msg" bindtap='del' data-proj_id='{{item.project_id}}'>删除</view>
         </view>
       </view>
 

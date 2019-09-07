@@ -26,13 +26,17 @@ Page({
       success: function(res) { //请求成功的回执函数
         if (res.statusCode == 200) {
           if (res.data.status == true) { //密码正确
-            wx.setStorage({ //免登陆缓存
+            wx.setStorage({
               key: 'name',
-              data: res.data.name,
-              key: 'password',
-              data: res.data.password,
+              data: that.data.name,
+            })
+            wx.setStorage({
               key: 'identity',
-              data: res.data.identity
+              data: res.data.identity,
+            })
+            wx.setStorage({ //免登陆缓存
+              key: 'password',
+              data: that.data.password,
             })
             if (res.data.identity == 'boss') {
               wx.redirectTo({
@@ -73,15 +77,54 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (app.globalData.identity == 'boss') {
-      wx.redirectTo({
-        url: '../boss_index/boss_index',
-      })
-    } else if (app.globalData.identity == 'salesman') {
-      wx.redirectTo({
-        url: '../salesman_index/salesman_index',
-      })
-    }
+    wx.getStorage({
+      key: 'name',
+      success: function (res) {
+        console.log('name:' + res.data)
+        app.globalData.name = res.data
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    })
+    wx.getStorage({
+      key: 'password',
+      success: function (res) {
+        console.log('password:' + res.data)
+        app.globalData.password = res.data
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    })
+    wx.getStorage({
+      key: 'identity',
+      success: function (res) {
+        app.globalData.identity = res.data
+        console.log('identity:' + app.globalData.identity)
+        if(res.data == 'salesman'){
+          wx.redirectTo({
+          url: '../salesman_index/salesman_index',
+        })
+        }else if(rse.data == 'boss'){
+          wx.redirectTo({
+            url: '../boss_index/boss_index',
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    })
+    // if (app.globalData.identity == 'boss') {
+    //   wx.redirectTo({
+    //     url: '../boss_index/boss_index',
+    //   })
+    // } else if (app.globalData.identity == 'salesman') {
+    //   wx.redirectTo({
+    //     url: '../salesman_index/salesman_index',
+    //   })
+    // }
   },
   event_name_change: function(e) {
     this.setData({

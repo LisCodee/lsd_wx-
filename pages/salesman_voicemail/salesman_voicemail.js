@@ -33,7 +33,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'https://www.leishida.cn/get-ones-record',
+      url: 'http://127.0.0.1:8000/LSD/get_ones_record',      //https://www.leishida.cn/LSD/get_ones_record
       method:"GET",
       data:{
         name:app.globalData.name
@@ -47,6 +47,13 @@ Page({
           that.setData({
             voicemail:res.data
           })
+          if(res.data.length == 0){
+            wx.showToast({
+              title: '暂无留言',
+              icon:'none',
+              duration:2000
+            })
+          }
         }else{
           console(res.statusCode)
         }

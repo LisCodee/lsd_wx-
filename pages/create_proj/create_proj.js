@@ -45,7 +45,7 @@ Page({
   send:function(e){
     var that = this
     wx.request({
-      url: 'https://www.leishida.cn/add-project',
+      url: 'http://127.0.0.1:8000/LSD/add_project/',      //https://www.leishida.cn/LSD/add_project
       data:{
         project_name:that.data.project_name,
         source:that.data.source,
@@ -74,6 +74,12 @@ Page({
               })
             }
           }
+        }
+        else{
+          wx.showToast({
+            title: '出现错误，请重试',
+            icon:'none'
+          })
         }
       },
       fail:function(e){

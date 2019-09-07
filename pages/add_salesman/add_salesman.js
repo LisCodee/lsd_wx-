@@ -34,8 +34,9 @@ Page({
           if(res.data.status == true){
             wx.showToast({
               title: '添加成功',
+              duration:2000
             })
-            wx.redirectTo({
+            wx.reLaunch({
               url: '../boss_index/boss_index',
             })
           }

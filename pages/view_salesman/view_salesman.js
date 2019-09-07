@@ -5,25 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: { 
-    salesman: [{
-        user_name: '张三',
-        telephone:'1234567',
-      },
-
-      {
-        user_name: '张三',
-        telephone: '1234567',
-      },
-      {
-        user_name: '张三',
-        telephone: '1234567',
-      },
-
-      {
-        user_name: '张三',
-        telephone: '1234567',
-      },
-    ],
+    salesman: [],
 
   },
   add_salesman: function(e) {
@@ -34,16 +16,18 @@ Page({
   onLoad:function(){
     var that = this
     wx.request({
-      url: 'https://www.leishida.cn/all-salesman',
+      url: 'http://127.0.0.1:8000/LSD/all_salesman',      //https://www.leishida.cn/LSD/all_salesman
       method:'GET',
       data:{},
       success:function(res){
+        console.log(res.data)
         if(res.statusCode == 200){
           that.setData({
             salesman: res.data
           })
+          console.log(that.data.salesman)
         }else{
-          console.log(res.statusCode)
+          console.log(res.data.statusCode)
         }
       },
       fail:function(r){
@@ -65,39 +49,40 @@ Page({
           console.log('用户点击确定')
           console.log(e.target.dataset.user_name)
           wx.request({
-            url: 'https://www.leishida.cn/del-salesman',
+            url: 'http://127.0.0.1:8000/LSD/del_salesman/',  //
             data: {
-              name: e.target.dataset.user_name
+              user_name: e.target.dataset.user_name
             },
             method: "POST",
             success: function (res) {       
               if (res.statusCode == 200) {
-                if (res.status == true) {
+                if (res.data.status == true) {
                   wx.showToast({
                     title: '删除成功',
                   })
+                  that.onLoad()
                 //删除成功后重新加载界面
-                  wx.request({
-                    url: 'https://www.leishida.cn/all-salesman',
-                    method: 'GET',
-                    data: {},
-                    success: function (res) {
-                      if (res.statusCode == 200) {
-                        that.setData({
-                          salesman: res.data
-                        })
-                      } else {
-                        console.log(res.statusCode)
-                      }
-                    },
-                    fail: function (r) {
-                      console.log(r)
-                      wx.showToast({
-                        title: '网络超时',
-                        icon: 'none'
-                      })
-                    }
-                  })
+                  // wx.request({
+                  //   url: 'https://www.leishida.cn/all-salesman',
+                  //   method: 'GET',
+                  //   data: {},
+                  //   success: function (res) {
+                  //     if (res.statusCode == 200) {
+                  //       that.setData({
+                  //         salesman: res.data
+                  //       })
+                  //     } else {
+                  //       console.log(res.statusCode)
+                  //     }
+                  //   },
+                  //   fail: function (r) {
+                  //     console.log(r)
+                  //     wx.showToast({
+                  //       title: '网络超时',
+                  //       icon: 'none'
+                  //     })
+                  //   }
+                  // })
                 }
                 else{
                   wx.showToast({

@@ -7,26 +7,13 @@ Page({
    */
   data: {
     num: 1,
-    act_msg: [{
-        proj_id:'1',
-        proj_name: '微信小程序',
-        proj_time: '时间:09月01日 周日 17:00',
-        proj_leader: '吴楠',
-      },
-
-      {
-        proj_id:'2',
-        proj_name: '微信小程序02',
-        proj_time: '时间:09月01日 周日 17:00',
-        proj_leader: '吴楠02',
-      },
-    ],
+    act_msg: [],
     search_content:''
   }, 
   onLoad:function(){
     var that = this
     wx.request({
-      url: 'https://www.leishida.cn/all-project',
+      url: 'http://127.0.0.1:8000/LSD/all_project',      //https://www.leishida.cn/LSD/all_project
       data:{},
       method:"GET",
       success:function(res){
@@ -34,6 +21,8 @@ Page({
           that.setData({
             act_msg: res.data
           })
+          console.log(res.data)
+          console.log(that.data.act_msg.length)
         }else{
           console.log(res.statusCode)
         }
@@ -117,6 +106,12 @@ Page({
   search:function(e){
     console.log("用户点击了搜索")
     var that = this
+    wx.showLoading({
+      title: '搜索中..',
+    })
+    setTimeout(function(){
+      wx.hideLoading()
+    },5000)
     if(this.data.search_content == ''){
       wx.showToast({
         title: '请输入搜索内容',
@@ -124,16 +119,24 @@ Page({
       })
     }else{
       wx.request({
-        url: 'https://www.leishida.cn/search-projects',
+        url: 'http://127.0.0.1:8000/LSD/search_project',    //https://www.leishida.cn/LSD/search_projects
         data:{
           key:that.data.search_content
         },
         method:"GET",
         success:function(res){
           if(res.statusCode == 200){
+            wx.hideLoading()
             that.setData({
               act_msg:res.data
             })
+            if(res.data.length == 0){
+              wx.showToast({
+                title: '没有查到',
+                icon:'none',
+                duration:2000
+              })
+            }
           }else{
             console.log(res.statusCode)
             wx.showToast({

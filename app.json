@@ -14,7 +14,8 @@
     "pages/salesman_proj/salesman_proj",
     "pages/salesman_voicemail/salesman_voicemail",
     "pages/salesman_index/salesman_index",
-    "pages/boss_index/boss_index"
+    "pages/boss_index/boss_index",
+    "pages/search_pro/search_pro"
   ],
   "window": {
     "backgroundTextStyle": "light",

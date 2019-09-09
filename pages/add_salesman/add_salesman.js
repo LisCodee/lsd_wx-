@@ -6,7 +6,8 @@ Page({
    */
   data: {
     name:'',
-    password:''
+    password:'',
+    telephone:'',
   },
   name_change:function(e){
     this.setData({
@@ -20,13 +21,19 @@ Page({
     })
     console.log("password:" + this.data.password)
   },
+  phone_change:function(e){
+    this.setData({
+      telephone:e.detail.value
+    })
+  },
   send:function(){
     var that = this
     wx.request({
       url: 'http://127.0.0.1:8000/LSD/add_salesman/',      //https://www.leishida.cn/LSD/add-salesman
       data:{
         user_name:that.data.name,
-        password:that.data.password
+        password:that.data.password,
+        telephone:that.data.telephone
       },
       method:"POST",
       success:function(res){

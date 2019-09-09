@@ -106,7 +106,7 @@ Page({
           wx.redirectTo({
           url: '../salesman_index/salesman_index',
         })
-        }else if(rse.data == 'boss'){
+        }else if(res.data == 'boss'){
           wx.redirectTo({
             url: '../boss_index/boss_index',
           })

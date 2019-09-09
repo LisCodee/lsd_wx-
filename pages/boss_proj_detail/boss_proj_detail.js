@@ -67,7 +67,10 @@ Page({
         }
         wx.request({
           url: 'http://127.0.0.1:8000/LSD/single_project_record',      //https://www.leishida.cn/single_project_record
-          data: { project_id: app.globalData.project_id },
+          data: { 
+            identity:wx.getStorageSync('identity'),
+            project_id: app.globalData.project_id 
+            },
           method: "GET",
           success: function (mes) {
             if (mes.statusCode == 200) {
@@ -81,11 +84,13 @@ Page({
                 icon: 'none'
               })
             }
+            console.log(that.data.report_record)
             var result = app.combineArray(that.data.report_record, that.data.voicemail_record)
             console.log("result:" + result)
             that.setData({
               message: result
             })
+            console.log(that.data.message)
           },
           fail: function (e) {
             console.log(e)
@@ -113,6 +118,7 @@ Page({
     })
   },
   boss_see_more: function (e) {
+    app.globalData.report_id = e.target.dataset.report_id
     wx.navigateTo({
       url: '../boss_see_more/boss_see_more',
     })

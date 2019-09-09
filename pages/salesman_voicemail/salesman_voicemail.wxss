@@ -29,7 +29,12 @@ page {
   box-shadow: 0rpx 5rpx 20rpx 6rpx rgba(85, 85, 85, 0.05);
   
 }
-
+.redpoint{
+  height: 15rpx;
+  width: 15rpx;
+  border-radius: 50%;
+  float: right;
+}
 .title {
   font-weight: 370;
   overflow: hidden;
@@ -41,7 +46,7 @@ page {
 }
 
 .message_body {
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #97989b;
   margin-bottom: 12rpx;
   height: 120rpx;

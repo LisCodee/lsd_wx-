@@ -6,12 +6,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    report_name:'',
     progress:'',
     workable:'',
     supply:'',
     capital:'',
     invoice:'',
     other:'',
+  },
+  title_change:function(e){
+    this.setData({
+      report_name:e.detail.value
+    })
   },
   progress_change:function(e){
     this.setData({
@@ -56,6 +62,8 @@ Page({
     wx.request({
       url: 'http://127.0.0.1:8000/LSD/add_report/',      //https://www.leishida.cn/add-report
       data:{
+        report_name:that.data.report_name,
+        reporter:wx.getStorageSync("name"),
         project_id:app.globalData.project_id,
         report_id:app.globalData.report_id,
         progress:that.data.progress,

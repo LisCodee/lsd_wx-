@@ -5,7 +5,7 @@
 
 
       <view wx:for="{{salesman}}" wx:key="*this">
-        <view class="message">
+        <view class="message" data-user_name="{{item.user_name}}" bindtap="look_for_pro">
           <text class='salesman_name'>{{item.user_name}}电话：{{item.telephone}}</text>
           <text class='delete' bindtap='delete_salesman' data-user_name="{{item.user_name}}">删除</text>
           <view class='line'></view>

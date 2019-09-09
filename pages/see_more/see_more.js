@@ -13,35 +13,38 @@ Page({
     invoice: '无',
     other: '没有其他的了',
   }, 
-  onLoad:function(){
+  load:function(){
     var that = this
     wx.request({
       url: 'http://127.0.0.1:8000/LSD/get_report/',    //https://www.leishida.cn/LSD/get-report/
-      method:'GET',
-      data:{
-        report_id:app.globalData.report_id
+      method: 'GET',
+      data: {
+        report_id: app.globalData.report_id
       },
-      success:function(res){
-        if(res.statusCode == 200){
+      success: function (res) {
+        if (res.statusCode == 200) {
           that.setData({
-            progress:res.data.progress,
-            workable:res.data.workable,
-            supply:res.data.supply,
-            capital:res.data.capital,
-            invoice:res.data.invoice,
-            other:res.data.other
+            progress: res.data.progress,
+            workable: res.data.workable,
+            supply: res.data.supply,
+            capital: res.data.capital,
+            invoice: res.data.invoice,
+            other: res.data.other
           })
-        }else{
+        } else {
           console.log(res.statusCode)
         }
       },
-      fail:function(e){
+      fail: function (e) {
         console.log(e)
         wx.showToast({
           title: '网络超时',
-          icon:'none'
+          icon: 'none'
         })
       }
     })
+  },
+  onLoad:function(){
+   this.load() 
   }
 })

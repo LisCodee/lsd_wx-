@@ -11,6 +11,11 @@
         <text class='name'>密码 :</text>
         <input placeholder-class='placeholder' placeholder='请输入密码' class="btn_in" name='password' value="{{}}" bindinput="password_change" />
       </view>
+      <view class="message2">
+        <text class='name'>电话 :</text>
+        <input placeholder-class='placeholder' placeholder='请输入电话' class="btn_in" name='phone' value="{{}}" bindinput="phone_change" />
+      </view>
+
 
       <view class="create-proj">
         <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="send">确定</button>

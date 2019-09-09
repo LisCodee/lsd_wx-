@@ -4,7 +4,7 @@
     <view wx:for="{{voicemail}}" wx:key="*this">
 
       <view class="message_card">
-        
+        <view class="redpoint" style="background-color:{{color}};" wx:if="{{item.read == false}}"></view>
         <view class="message_body">{{item.message}}</view>
         <view class="bottom">
           <view class="time">{{item.time}}</view>

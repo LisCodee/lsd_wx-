@@ -19,7 +19,7 @@
           <view>汇报人：{{item.reporter}}</view>
           <view>汇报时间：{{item.time}}</view>
         </view>
-        <button class='btn' bindtap='boss_see_more'>查看更多</button>
+        <button class='btn' bindtap='boss_see_more' data-report_id="{{item.report_id}}">查看更多</button>
       </view>
 
       <view class='boss_reply' wx:if="{{item.status == 1}}">

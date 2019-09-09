@@ -9,27 +9,28 @@
         <view class="principal">项目来源:{{source}}</view>
         <view class="contact_person">对方联系人：{{contacts}}</view>
         <view class="contact_method">对方联系人方式：{{telephone}}</view>
-        <view class="creation_time">简介{{introduction}}</view>
+        <view class="creation_time">简介:{{introduction}}</view>
       </view>
     </view>
 
-     <view wx:for='{{message}}' wx:key='*this' wx:for-item="item"> 
-    <view class='report_card' wx:if="{{item.status == 0}}">
-      <view  class='report_basic_format' >
-        <view>汇报题目：{{item.report_name}}</view>
-        <view>汇报人：{{item.reporter}}</view>
-        <view>汇报时间：{{item.time}}</view>
+    <view wx:for='{{message}}' wx:key='*this' wx:for-item="item">
+      <view class='report_card' wx:if="{{item.status == 0}}">
+        <view class='report_basic_format'>
+          <view>汇报名称：{{item.report_name}}</view>
+          <view>汇报人：{{item.reporter}}</view>
+          <view>汇报时间：{{item.time}}</view>
+        </view>
+        <button class='btn' bindtap='see_more' data-report_id="{{item.report_id}}">查看更多</button>
       </view>
-      <button class='btn' bindtap='see_more' data-report_id="{{item.report_id}}">查看更多</button>
-    </view>
 
-    <view class='boss_reply' wx:if="{{item.status == 1}}">
-      <view class='reply_format'>{{item.content}}</view>
+      <view class='boss_reply' wx:if="{{item.status == 1}}">
+        <view class='reply_format'>{{item.content}}</view>
+      </view>
     </view>
-    </view>
+    <view class="blank"></view>
 
     <view class="create-proj">
-      <button type="" form-type="submit" hover-class='button-hover' class='btn_style,button1' bindtap="proj_report">新建汇报</button>
+      <button type="" form-type="submit" hover-class='button-hover' class='button1' bindtap="proj_report">新建汇报</button>
     </view>
 
   </view>

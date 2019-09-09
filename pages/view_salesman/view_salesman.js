@@ -1,4 +1,5 @@
 // pages/view_salesman/view_salesman.js
+const app = getApp()
 Page({
 
   /**
@@ -13,31 +14,37 @@ Page({
       url: '../add_salesman/add_salesman',
     })
   },
-  onLoad:function(){
+  load:function(){
     var that = this
     wx.request({
       url: 'http://127.0.0.1:8000/LSD/all_salesman',      //https://www.leishida.cn/LSD/all_salesman
-      method:'GET',
-      data:{},
-      success:function(res){
+      method: 'GET',
+      data: {},
+      success: function (res) {
         console.log(res.data)
-        if(res.statusCode == 200){
+        if (res.statusCode == 200) {
           that.setData({
             salesman: res.data
           })
           console.log(that.data.salesman)
-        }else{
+        } else {
           console.log(res.data.statusCode)
         }
       },
-      fail:function(r){
+      fail: function (r) {
         console.log(r)
         wx.showToast({
           title: '网络超时',
-          icon:'none'
+          icon: 'none'
         })
       }
     })
+  },
+  onLoad:function(){
+    this.load()
+  },
+  onShow:function(){
+    this.load()
   },
   delete_salesman:function(e){
     var that = this
@@ -61,28 +68,6 @@ Page({
                     title: '删除成功',
                   })
                   that.onLoad()
-                //删除成功后重新加载界面
-                  // wx.request({
-                  //   url: 'https://www.leishida.cn/all-salesman',
-                  //   method: 'GET',
-                  //   data: {},
-                  //   success: function (res) {
-                  //     if (res.statusCode == 200) {
-                  //       that.setData({
-                  //         salesman: res.data
-                  //       })
-                  //     } else {
-                  //       console.log(res.statusCode)
-                  //     }
-                  //   },
-                  //   fail: function (r) {
-                  //     console.log(r)
-                  //     wx.showToast({
-                  //       title: '网络超时',
-                  //       icon: 'none'
-                  //     })
-                  //   }
-                  // })
                 }
                 else{
                   wx.showToast({
@@ -109,5 +94,16 @@ Page({
       }
     })
     
+  },
+  look_for_pro:function(e){
+    // var search_name = e.target.dataset.user_name
+    // wx.setStorage({
+    //   key: 'search_name',
+    //   data: search_name,
+    // })
+    app.globalData.search_name = e.target.dataset.user_name
+    wx.navigateTo({
+      url: '../search_pro/search_pro',
+    })
   }
 })

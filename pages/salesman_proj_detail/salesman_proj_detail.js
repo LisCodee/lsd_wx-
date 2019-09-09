@@ -51,7 +51,10 @@ Page({
     })
     wx.request({
       url: 'http://127.0.0.1:8000/LSD/single_project_report',      //https://www.leishida.cn/single_project_report
-      data: { project_id: app.globalData.project_id },
+      data: { 
+        
+        project_id: app.globalData.project_id
+      },
       method: "GET",
       success: function (res) {
         if (res.statusCode == 200) {
@@ -67,7 +70,10 @@ Page({
         }
         wx.request({
           url: 'http://127.0.0.1:8000/LSD/single_project_record',      //https://www.leishida.cn/single_project_record
-          data: { project_id: app.globalData.project_id },
+          data: { 
+            identity: wx.getStorageSync('identity'),
+            project_id: app.globalData.project_id 
+            },
           method: "GET",
           success: function (mes) {
             if (mes.statusCode == 200) {

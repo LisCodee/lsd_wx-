@@ -2,6 +2,14 @@
 <view class="container">
   <view class="classname">
     <form>
+
+      <view style='width:90%;margin:20rpx 5% 20rpx 5%;'>
+        <view class="title">报告名称:</view>
+        <view class='detail_view'>
+          <textarea class='detail_textarea' auto-height='true' bindinput="title_change" name='proj_progress'></textarea>
+        </view>
+      </view>
+
       <view style='width:90%;margin:20rpx 5% 20rpx 5%;'>
         <view class="title">项目进展:</view>
         <view class='detail_view'>
@@ -43,12 +51,13 @@
           <textarea class='detail_textarea' auto-height='true' bindinput='other_change' name='other'></textarea>
         </view>
       </view>
+      <cover-view class="submit">
+        <button type="" form-type="submit" hover-class='button-hover' class='button1' bindtap="send">提交</button>
+      </cover-view>
+      <!-- <cover-view class="submit">
+        <button type="" form-type="submit" hover-class='button-hover' class='button1' bindtap="send">提交</button>
+      </cover-view> -->
 
-
-
-      <view class="submit">
-        <button type="" form-type="submit" hover-class='button-hover' class='btn_style' bindtap="send">提交</button>
-      </view>
     </form>
   </view>
 </view>

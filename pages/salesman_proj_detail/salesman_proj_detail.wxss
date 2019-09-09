@@ -81,20 +81,21 @@ page {
   padding: 10rpx 0 10rpx 20rpx;
   font-family: "微软雅黑", "黑体";
 }
-
+.blank{
+  height: 120rpx;
+}
+.create-proj {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .button1 {
-  margin-top: 96rpx;
+  /* margin-top: 96rpx; */
   width: 690rpx;
   color: #fff;
   height: 80rpx;
   font-size: 30rpx;
   font-family: "微软雅黑", "黑体";
   background: #4481dd;
-}
-
-.create-proj {
-  position: fixed;
-  bottom: 50rpx;
-  left: 0;
-  right: 0;
 }

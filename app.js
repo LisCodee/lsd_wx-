@@ -2,6 +2,7 @@
 const app = getApp()
 App({
   globalData: {  //全局变量
+    search_name:'',
     name: '',
     password: '',
     identity:'',
